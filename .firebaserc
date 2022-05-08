@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mobile-provider-462c4": {
+      "hosting": {
+        "mobile-operator": [
+          "mobile-provider-462c4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mobile-provider-462c4"
+  }
+}
