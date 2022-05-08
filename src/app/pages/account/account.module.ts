@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { AccountRoutingModule } from './account-routing.module';
 import { AccountComponent } from './account.component';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +14,9 @@ import { AccountComponent } from './account.component';
   ],
   imports: [
     CommonModule,
-    AccountRoutingModule
+    AccountRoutingModule,
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class AccountModule { }
