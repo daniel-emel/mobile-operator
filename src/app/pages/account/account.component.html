@@ -3,24 +3,31 @@
         <mat-card-title>
             <h1>Account Details</h1>
         </mat-card-title>
-        <mat-card-content>
-            <div>
-                <p>ID: {{ user.id }}</p>
-            </div>
-            <div>
-                <p>Email: {{ user.email }}</p>
-            </div>
-            <div>
-                <p>Firstname: {{ user.name.firstname }}</p>
-            </div>
-            <div>
-                <p>Lastname: {{ user.name.lastname }}</p>
-            </div>
+        <mat-card-content style="display: flex;justify-content: center; align-items: center; flex-direction: column;">
+            <mat-form-field>
+                <mat-label for="id">ID</mat-label>
+                <input matInput [disabled]="true" [value]="user.id" type="text" />
+            </mat-form-field>
+            
+            <mat-form-field>
+                <mat-label for="email">Email</mat-label>
+                <input matInput [disabled]="true" [value]="user.email" type="text" />
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label for="firstname">First name</mat-label>
+                <input matInput  [disabled]="!isEditing" [(ngModel)]="user.name.firstname" type="text"/>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label for="lastname">Last name</mat-label>
+                <input matInput [disabled]="!isEditing" [(ngModel)]="user.name.lastname" type="text"/>
+            </mat-form-field>
+
         </mat-card-content>
-        <mat-card-actions>
-            <div fxLayout fxLayoutAlign="center">
+        <mat-card-actions fxLayout fxLayoutAlign="center">
+                <button mat-raised-button color="danger" type="submit" (click)="updateUser()"> {{ isEditing ? "Save Account" : "Edit Account" }}</button>
                 <button mat-raised-button color="danger" type="submit" (click)="deleteUser()">Delete Account</button>
-            </div>
         </mat-card-actions>
     </mat-card>
 </div>
