@@ -8,6 +8,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit{
+
   title = 'mobile-operator';
   loggedInUser?: firebase.default.User | null;
 
@@ -18,7 +19,6 @@ export class AppComponent implements OnInit{
       this.loggedInUser = user;
       localStorage.setItem('user', JSON.stringify(this.loggedInUser));
     }, error => {
-      console.log(error);
       localStorage.setItem('user', JSON.stringify('null'));
     })
   }

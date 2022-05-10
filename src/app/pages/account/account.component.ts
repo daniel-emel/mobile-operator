@@ -25,7 +25,6 @@ export class AccountComponent implements OnInit {
   ngOnInit(): void {
     let id = JSON.parse(localStorage.getItem('user') as string).uid;
     this.userService.getById(id).subscribe(user => {this.user = user!;});
-    console.log(this.user);
   }
 
   deleteUser() {

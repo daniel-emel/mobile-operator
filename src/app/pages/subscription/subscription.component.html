@@ -9,9 +9,10 @@
                 <p>Data: 3GB</p>
                 <p>Monthly: 10$</p>
             </mat-card-content>
-            <mat-card-actions>
-                <div fxLayout fxLayoutAlign="center">
-                    <button mat-raised-button  color="primary" typue="submit">Buy</button>
+            <mat-card-actions >
+                <div fxLayout fxLayoutAlign="center" *ngIf="isUserLoggedIn">
+                    <button *ngIf="!this.userSubs.subscriptions.includes('Prime Small')" mat-raised-button  color="primary" typue="submit" (click)="buySub('Prime Small')">Buy</button>
+                    <button *ngIf="this.userSubs.subscriptions.includes('Prime Small')" mat-raised-button  color="warn" typue="submit" (click)="unSub('Prime Small')">Unsubscribe</button>
                 </div>
             </mat-card-actions>
         </mat-card>
@@ -24,9 +25,10 @@
                 <p>Data: 20GB</p>
                 <p>Monthly: 25$</p>        
             </mat-card-content>
-            <mat-card-actions>
-                <div fxLayout fxLayoutAlign="center">
-                    <button mat-raised-button  color="primary" typue="submit">Buy</button>
+            <mat-card-actions >
+                <div fxLayout fxLayoutAlign="center" *ngIf="isUserLoggedIn">
+                    <button *ngIf="!this.userSubs.subscriptions.includes('Prime Medium')" mat-raised-button  color="primary" typue="submit" (click)="buySub('Prime Medium')">Buy</button>
+                    <button *ngIf="this.userSubs.subscriptions.includes('Prime Medium')" mat-raised-button  color="warn" typue="submit" (click)="unSub('Prime Medium')">Unsubscribe</button>
                 </div>
             </mat-card-actions>
         </mat-card>
@@ -40,8 +42,9 @@
                 <p>Monthly: 40$</p>        
             </mat-card-content>
             <mat-card-actions>
-                <div fxLayout fxLayoutAlign="center">
-                    <button mat-raised-button  color="primary" typue="submit">Buy</button>
+                <div fxLayout fxLayoutAlign="center" *ngIf="isUserLoggedIn">
+                    <button *ngIf="!this.userSubs.subscriptions.includes('Prime Max')" mat-raised-button  color="primary" typue="submit" (click)="buySub('Prime Max')">Buy</button>
+                    <button *ngIf="this.userSubs.subscriptions.includes('Prime Max')" mat-raised-button  color="warn" typue="submit" (click)="unSub('Prime Max')">Unsubscribe</button>
                 </div>
             </mat-card-actions>
         </mat-card>

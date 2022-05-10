@@ -21,7 +21,7 @@ export class UserService {
   }
 
   update(user: User) {
-    return this.afs.collection<User>(this.collectionName).doc(user.id).set(user);
+    return this.afs.collection(this.collectionName).doc(user.id).set(user);
   }
 
   async delete(id: string) {
